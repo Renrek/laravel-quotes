@@ -1,16 +1,20 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('base')
 
-        <title>Renrek's Repository</title>
+@section('title')
+Home
+@endsection
 
-        <style>
-        </style>
+@section('style')
+<!-- None -->
+@endsection
 
-    </head>
-    <body class="antialiased">
-       Renrek.com
-    </body>
-</html>
+@section('content')
+    <div class="container">
+        <div class="jumbotron">
+        </div>
+        <div class="row">
+            <div class="col-6">stuff</div>
+            <div class="col-6">more stuff</div>
+        </div>
+    </div>
+@endsection
