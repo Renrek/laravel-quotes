@@ -13,8 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'App\Http\Controllers\PagesController@home');
-Route::get('/about', 'App\Http\Controllers\PagesController@about');
-//Route::get('/contact', 'App\Http\Controllers\PagesController@home');
+Route::get('/', [App\Http\Controllers\PagesController::class, 'index']);
+Route::get('/about', [App\Http\Controllers\PagesController::class, 'about']);
+Route::resource('authors', App\Http\Controllers\AuthorsController::class);
+Route::resource('quotes', App\Http\Controllers\QuotesController::class, ['except' => ['index', 'create', 'show']]);
 
-//Route::get('/', [PagesController::class, 'home']);
+//Disabled register
+Auth::routes(['register' => false]);
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

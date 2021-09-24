@@ -3,16 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Quote;
 
 class PagesController extends Controller
 {
-    public function home()
+    public function index()
     {
-        return view('home');
+        $quote = Quote::inRandomOrder()->first();
+
+        return view('pages.index')->with('quote', $quote);
     }
 
     public function about()
     {
-        return view('about');
+        return view('pages.about');
     }
 }
