@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [App\Http\Controllers\PagesController::class, 'index']);
+Route::get('/about', [App\Http\Controllers\PagesController::class, 'about']);
+Route::resource('authors', App\Http\Controllers\AuthorsController::class);
+Route::resource('quotes', App\Http\Controllers\QuotesController::class, ['except' => ['index', 'create', 'show']]);
+
+//Disabled register
+Auth::routes(['register' => false]);
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
