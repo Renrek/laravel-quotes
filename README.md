@@ -9,7 +9,7 @@ A simple Laravel app hosted on a LAMP stack. Uses as the template to collect quo
 display one on visting the page. This is a template used to add more utility to as my
 hobby projects grow. It is also a means to keep my PHP skills limber.
 
-To see the fully functional site, please visit: [Live Site](https://renrek.com)
+To see the fully functional site: [Live Site](https://renrek.com) Note: Login will not be permitted.
 
 ![AddQuotes](documentation/images/quoteCollecter.gif)
 
